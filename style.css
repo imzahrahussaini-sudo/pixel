@@ -1,0 +1,336 @@
+/* ---------- Colors: change these to change the whole site ---------- */
+:root {
+    --navy: #14213d;
+    --cream: #fdf6ec;
+    --cream-deep: #f5e9d6;
+    --coral: #f2705a;
+    --text: #222222;
+    --card: #ffffff;
+}
+
+/* ---------- Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ---------- Navbar ---------- */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: var(--navy);
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--coral);
+    border-bottom-color: var(--coral);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--coral);
+    color: white;
+    border: 2px solid var(--coral);
+}
+
+.btn-primary:hover {
+    background-color: var(--navy);
+    border-color: var(--navy);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+}
+
+.btn-outline:hover {
+    background-color: var(--navy);
+    color: white;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 60px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    max-width: 640px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* ---------- Sections (shared) ---------- */
+.section {
+    padding: 80px 40px;
+}
+
+.section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.section-intro {
+    max-width: 60ch;
+    margin-bottom: 36px;
+}
+
+/* ---------- Cards (services + portfolio) ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background-color: var(--card);
+    border-top: 6px solid var(--coral);
+    border-radius: 12px;
+    padding: 28px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    color: var(--navy);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* ---------- Services (navy band) ---------- */
+.services {
+    background-color: var(--navy);
+}
+
+.services h2 {
+    color: white;
+}
+
+.services .section-intro {
+    color: #d9dce4;
+}
+
+/* ---------- Skills ---------- */
+.skills {
+    display: grid;
+    gap: 22px;
+    max-width: 650px;
+    margin-top: 24px;
+}
+
+.skill-top {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.bar {
+    height: 14px;
+    background-color: var(--cream-deep);
+    border: 2px solid var(--navy);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background-color: var(--coral);
+}
+
+/* ---------- Portfolio ---------- */
+.portfolio {
+    background-color: var(--cream-deep);
+}
+
+.project {
+    padding: 0;
+    overflow: hidden;
+}
+
+.thumb {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.project-text {
+    padding: 22px;
+}
+
+/* ---------- Contact form ---------- */
+.form {
+    display: grid;
+    gap: 8px;
+    max-width: 600px;
+}
+
+.form label {
+    font-weight: bold;
+    color: var(--navy);
+    margin-top: 10px;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: white;
+    border: 2px solid var(--navy);
+    border-radius: 10px;
+}
+
+.form input:focus,
+.form textarea:focus {
+    outline: 3px solid var(--coral);
+    outline-offset: 2px;
+}
+
+.form .btn {
+    justify-self: start;
+    margin-top: 18px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    padding: 26px 40px;
+    text-align: center;
+    background-color: var(--navy);
+    color: white;
+}
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .profile {
+        width: 160px;
+        height: 160px;
+    }
+
+/* ---------- About ---------- */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--coral);
+    flex-shrink: 0;
+}
+
+/* ---------- Mobile (keep this at the very bottom) ---------- */
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 18px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 40px 20px;
+    }
+
+    .section {
+        padding: 56px 20px;
+    }
+
+    .footer {
+        padding: 24px 20px;
+    }
+}
